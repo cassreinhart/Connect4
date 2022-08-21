@@ -16,7 +16,6 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
  */
 
 function makeBoard() {
-  // TODO: set "board" to empty HEIGHT x WIDTH matrix array
   
   for (let i = 0; i < HEIGHT; i++) {
     if (!board[i]) board[i] = [];
@@ -42,9 +41,9 @@ function makeHtmlBoard() {
   }
   htmlBoard.append(top); //adds the finished top row to the board
 
-  // TODO: add comment for this code
   for (let y = 0; y < HEIGHT; y++) { //loop over the height variable to create rows for the game board
     const row = document.createElement("tr"); //creates a table row for each value in height
+    
     for (let x = 0; x < WIDTH; x++) { //loop over width to create cells within the rows
       const cell = document.createElement("td"); //creates the cells
       cell.setAttribute("id", `${y}-${x}`); //creates a locator id so we can see where the pieces end up (id winner)
@@ -67,8 +66,7 @@ function findSpotForCol(x) {
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
   const pieceDiv = document.createElement("div"); //creates a div to represent a piece
-  pieceDiv.classList.add("piece"); //adds the "piece" class
-  pieceDiv.classList.add(`p${currPlayer}`); //adds the p1/p2 class to identify which player's piece it is
+  pieceDiv.classList.add('piece', `p${currPlayer}`); //adds the p1/p2 class to identify which player's piece it is
 
   //insert into correct table cell
   let cell = document.getElementById(`${y}-${x}`);
@@ -78,8 +76,8 @@ function placeInTable(y, x) {
 /** endGame: announce game end */
 
 function endGame(msg) {
-  // TODO: pop up alert message
   alert(msg);
+
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -104,8 +102,6 @@ function handleClick(evt) {
   }
 
   // check for tie
-  // TODO: check if all cells in board are filled; if so call, call endGame
-
   if (board.every(row => row.every(cell => cell))) {
     return endGame('TIE!!!')
   }
