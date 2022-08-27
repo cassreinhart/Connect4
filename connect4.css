@@ -1,4 +1,4 @@
-/* game board table */
+c/* game board table */
 #board {
   padding-top: 10vh;
   margin: auto;
@@ -33,6 +33,19 @@
   background-color: #6dc9c8;
 }
 
+.drop {
+  animation-name: drop;
+  animation-duration: 500ms;
+}
+
+@keyframes drop-animation {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 #column-top td {
   border: dashed 1px lightgray;
   /* translate: y; */

@@ -66,7 +66,7 @@ function findSpotForCol(x) {
 function placeInTable(y, x) {
   // TODO: make a div and insert into correct table cell
   const pieceDiv = document.createElement("div"); //creates a div to represent a piece
-  pieceDiv.classList.add('piece', `p${currPlayer}`); //adds the p1/p2 class to identify which player's piece it is
+  pieceDiv.classList.add('piece', `p${currPlayer}`, 'drop'); //adds the p1/p2 class to identify which player's piece it is
 
   //insert into correct table cell
   let cell = document.getElementById(`${y}-${x}`);
@@ -77,7 +77,6 @@ function placeInTable(y, x) {
 
 function endGame(msg) {
   alert(msg);
-
 }
 
 /** handleClick: handle click of column top to play piece */
@@ -94,7 +93,7 @@ function handleClick(evt) {
 
   // place piece in board and add to HTML table
   placeInTable(y, x);
-  board[y][x] = `p${currPlayer}`; // TODO: add line to update in-memory board
+  board[y][x] = `${currPlayer}`; // TODO: add line to update in-memory board
 
   // check for win
   if (checkForWin()) {
