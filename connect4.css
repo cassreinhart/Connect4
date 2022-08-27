@@ -41,7 +41,7 @@ c/* game board table */
 
 @keyframes drop-animation {
   from {
-    transform: translateY(-300px);
+    transform: translateY(-275px);
   }
   to {
     transform: translateY(0);
