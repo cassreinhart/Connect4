@@ -35,7 +35,7 @@ c/* game board table */
 }
 
 .drop {
-  animation-name: drop;
+  animation-name: drop-animation;
   animation-duration: 500ms;
 }
 
