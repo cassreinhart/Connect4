@@ -1,7 +1,8 @@
 c/* game board table */
 #board {
   padding-top: 10vh;
-  margin: auto;
+  padding-left: 10vh;
+  margin: 0 auto;
 }
 
 #board td {

@@ -127,7 +127,7 @@ function checkForWin() {
         y < HEIGHT &&
         x >= 0 &&
         x < WIDTH &&
-        board[y][x] === currPlayer
+        board[y][x] == currPlayer
     );
   }
 
